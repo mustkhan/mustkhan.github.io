@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://mustkhan.github.io/al-folio/sitemap.xml
+Sitemap: https://mustkhan.github.io/sitemap.xml
