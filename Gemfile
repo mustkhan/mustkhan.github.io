@@ -20,9 +20,6 @@ group :jekyll_plugins do
     gem 'jemoji'
     gem 'unicode_utils'
     gem 'webrick'
-    gem 'faraday', '~> 2.7', '>= 2.7.11'
-    gem "github-pages", group: :jekyll_plugins
-    gem "jekyll-include-cache", group: :jekyll_plugins
     gem "faraday-retry"
 end
 group :other_plugins do

@@ -224,10 +224,6 @@ plugins:
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
-  - jekyll-include-cache
-  - faraday
-  - faraday-retry
-  - gemfile
 
 # Sitemap settings
 defaults:
