@@ -25,7 +25,7 @@ At the same time, I’m researching the mechanistic interpretability of foundati
 
 Beyond research, I serve as [Technical Director of Perception](https://www.autodrive.utoronto.ca/our-team) at [aUToronto](https://www.autodrive.utoronto.ca/), UofT’s self-driving car team, where I lead teams in 2D Vision, 3D Object Detection, and Tracking. Our efforts have propelled the University of Toronto to multiple [1st-place](https://www.utoronto.ca/news/u-t-team-takes-top-spot-self-driving-car-challenge-6th-time-7-years#:~:text=Latest%20news-,U%20of%20T%20team%20takes%20top%20spot%20in%20self%2Ddriving,6th%20time%20in%207%20years&text=A%20team%20from%20the%20University,American%20self%2Ddriving%20car%20competition.) finishes in the SAE Autodrive Challenge, an intercollegiate competition.
 
-### Research Interests 
+### Research Interests
 - Representation learning and interpretability
 - Foundation models
 - Self-supervised learning (SSL)
