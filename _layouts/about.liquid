@@ -5,10 +5,9 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
-        <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-        {{ site.last_name }}
+      <span class="font-weight-bold">{{ site.first_name }} {{ site.last_name }}</span>
       {% else %}
-        {{ site.title }}
+      {{ site.title }}
       {% endif %}
     </h1>
     <p class="desc">{{ page.subtitle }}</p>
@@ -16,65 +15,199 @@ layout: default
 
   <article>
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
+    <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      {% if page.profile.image %}
+      {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+      {% if page.profile.image_circular %}
+      {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+      {% else %}
+      {% assign profile_image_class = 'img-fluid z-depth-1
       rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
+      {% endif %}
+      {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width:
+      576px)
       30vw, 95vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
+      {%
+      include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes
+      alt=page.profile.image
+      cache_bust=true
+      %}
+      {% endif %}
+      {% if page.profile.more_info %}
+      <div class="more-info">{{ page.profile.more_info }}</div>
+      {% endif %}
+    </div>
     {% endif %}
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Research interests -->
+    <div class="custom_projects" id="research_interests">
+      {% if page.research_interests %}
+        {% include research_interests.html %}
+      {% endif %}
+    </div>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+      <h3>Education</h3>
+      <div class="education-list">
+        {% for edu in site.education %}
+        <table
+          style="padding-top: 20px; width: 100%; border: 0px; border-spacing: 0px; border-collapse: separate; margin-right: auto; margin-left: auto;">
+          <tbody>
+            <tr>
+              <!-- Image Column -->
+              <td style="padding-right: 20px; width: 20%; vertical-align: middle;">
+                {% if edu.image %}
+                <img src="{{ edu.image | relative_url }}" alt="{{ edu.title }}" width="160" height="160">
+                {% else %}
+
+                {% endif %}
+              </td>
+
+              <!-- Text Column -->
+              <td width="75%" valign="middle">
+                <p>
+                  <strong>{{ edu.title }}</strong>
+                </p>
+                <p1>
+                  <a href="{{ edu.degree_url }}">{{ edu.degree }}</a> | {{ edu.years }}
+                  <br>
+                  <strong>{{ edu.description }}</strong>
+                </p1>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="publications">
+      <h3>Publications</h3>
+      <div class="publications-list">
+        {% for edu in site.publications %}
+        <table
+          style="padding-top: 20px; width: 100%; border: 0px; border-spacing: 0px; border-collapse: separate; margin-right: auto; margin-left: auto;">
+          <tbody>
+            <tr>
+              <!-- Image Column -->
+              <td style="padding-right: 20px; width: 20%; vertical-align: middle;">
+                {% if edu.image %}
+                <img src="{{ edu.image | relative_url }}" alt="{{ edu.title }}" width="160" height="160">
+                {% else %}
+
+                {% endif %}
+              </td>
+
+              <!-- Text Column -->
+              <td width="75%" valign="middle">
+                <p>
+                  <strong>{{ edu.title }}</strong>
+                  <br>
+                  <span id="authors", style="color: gray;">{{ edu.authors }}</span>
+                  <br>
+                  <i>
+                    {% if edu.submission_url %}
+                    <a href="{{ edu.submission_url }}">{{edu.submission}}</i>,</a>
+                  {% else %}
+                  {{edu.submission}}</i>,
+                  {% endif %} {{ edu.year }} ({{edu.status}})
+                  <p style="font-size: smaller; color: gray;">PAPER / PROJECT PAGE (Coming Soon!)/ CODE (Coming Soon!) / <a href="assets/pdf/RoboCulture_Poster_PRINT_FINAL.pdf" target="_blank">POSTER</a></p>
+                </p>
+                <p1>
+                  {{ edu.description }}
+                </p1>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+      </div>
+    </section>
+
+    <script>
+      // Highlight the author "Mustafa Khan"
+      const authorsElement = document.getElementById('authors');
+      if (authorsElement) {
+        authorsElement.innerHTML = authorsElement.innerHTML.replace(
+          /\Mustafa Khan\b/g,
+          '<strong style="color: lightsteelblue;">Mustafa Khan</strong>'
+        );
+      }
+    </script>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <h3>Projects</h3>
+      <div class="projects-list">
+        {% for proj in site.projects %}
+        <table
+          style="padding-top: 20px; width: 100%; border: 0px; border-spacing: 0px; border-collapse: separate; margin-right: auto; margin-left: auto;">
+          <tbody>
+            <tr>
+              <!-- Image Column -->
+              <td style="padding-right: 20px; width: 20%; vertical-align: middle;">
+                {% if proj.img %}
+                <img src="{{ proj.img | relative_url }}" alt="{{ proj.title }}" width="160" height="160">
+                {% else %}
+
+                {% endif %}
+              </td>
+
+              <!-- Text Column -->
+              <td width="75%" valign="middle">
+                <p>
+                  <strong>{{ proj.title }}</strong>
+                </p>
+                <p1>
+                  {{ proj.description }}
+                </p1>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        {% endfor %}
+      </div>
+    </section>
+
     <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+    <!--{% if page.news and site.announcements.enabled %}-->
+    <!--  <h2>-->
+    <!--    <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>-->
+    <!--  </h2>-->
+    <!--  {% include news.liquid limit=true %}-->
+    <!--{% endif %}-->
 
     <!-- Latest posts -->
-    {% if site.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
+    <!-- {% if site.latest_posts.enabled %}-->
+    <!--   <h2>-->
+    <!--     <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>-->
+    <!--   </h2>-->
+    <!--   {% include latest_posts.liquid %}-->
+    <!-- {% endif %}-->
 
     <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
+    <!--{% if page.selected_papers %}-->
+    <!--  <h2>-->
+    <!--    <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>-->
+    <!--  </h2>-->
+    <!--  {% include selected_papers.liquid %}-->
+    <!--{% endif %}-->
 
     <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
+    <!-- {% if page.social %}-->
+    <!--   <div class="social">-->
+    <!--     <div class="contact-icons">{% include social.liquid %}</div>-->
+    <!--     <div class="contact-note">{{ site.contact_note }}</div>-->
+    <!--   </div>-->
+    <!-- {% endif %}-->
 
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-
-    {% if site.newsletter.enabled and site.footer_fixed %}
-      {% include newsletter.liquid center=true %}
-    {% endif %}
+    <!--{% if site.newsletter.enabled and site.footer_fixed %}-->
+    <!--  {% include scripts/newsletter.liquid center=true %}-->
+    <!--{% endif %}-->
   </article>
+
 </div>

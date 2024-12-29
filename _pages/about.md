@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <a href='https://www.utoronto.ca/'>University of Toronto</a>
 
 profile:
   align: right
@@ -13,13 +13,19 @@ profile:
     <p>123 your address street</p>
     <p>Your City, State 12345</p>
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+news: false # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hi! I’m a 4th-year Engineering Science student at the University of Toronto, majoring in Robotics with a minor in Machine Intelligence.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I invented [AutoSplat](https://autosplat.github.io/) during a 16-month research internship at [Huawei, Noah's Ark Lab](http://dev3.noahlab.com.hk/), creating digital twins of autonomous driving scenes using 3D Gaussian Splatting (3DGS). The framework outperformed state-of-the art methods such as [EmerNeRF](https://emernerf.github.io/) from [NVIDIA](https://research.nvidia.com/labs/toronto-ai/), leading to a patent and first-author paper submitted to [ICRA 2025](https://2025.ieee-icra.org/).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+Currently, I’m working on generalizable 3D vision for autonomous driving as part of my bachelor's thesis with Professor [Steven Waslander](https://www.trailab.utias.utoronto.ca/steven-waslander) at the [Toronto Robotics and AI Lab (TRAIL)](https://www.trailab.utias.utoronto.ca/).
+
+At the same time, I’m researching the mechanistic interpretability of foundation models with Professor [Vardan Papyan](https://sites.google.com/view/vardan-papyan/home) at the [Vector Institute](https://vectorinstitute.ai/). 
+
+Beyond research, I serve as [Technical Director of Perception](https://www.autodrive.utoronto.ca/our-team) at [aUToronto](https://www.autodrive.utoronto.ca/), UofT’s self-driving car team, where I lead teams in 2D Vision, 3D Object Detection, and Tracking. Our efforts have propelled the University of Toronto to multiple [1st-place](https://www.utoronto.ca/news/u-t-team-takes-top-spot-self-driving-car-challenge-6th-time-7-years#:~:text=Latest%20news-,U%20of%20T%20team%20takes%20top%20spot%20in%20self%2Ddriving,6th%20time%20in%207%20years&text=A%20team%20from%20the%20University,American%20self%2Ddriving%20car%20competition.) finishes in the SAE Autodrive Challenge, an intercollegiate competition.
+
+# Research Interests 
