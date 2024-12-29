@@ -23,3 +23,81 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss"
 ;
+
+
+#projects {
+  margin: 2em 0;
+  text-align: left;
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em; /* Space between project cards */
+}
+
+.project-card {
+  display: flex;
+  // background-color: #222; /* Match the dark theme background */
+  border-radius: 10px;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  // &:hover {
+  //   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  // }
+}
+
+.project-image img {
+  width: 120px; /* Fixed image size */
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.project-content {
+  padding: 1em;
+  color: #ddd; /* Match text color to the dark theme */
+  flex: 1;
+}
+
+.project-content h3 {
+  font-size: 1.25em;
+  color: #fff; /* Bright title for contrast */
+  margin-bottom: 0.5em;
+}
+
+.project-meta {
+  font-size: 0.9em;
+  color: #a1a1a1; /* Slightly muted meta text */
+  margin-bottom: 0.5em;
+}
+
+.project-description {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #ccc; /* Lighter text color for readability */
+}
+
+.author-name {
+  color: #007acc; /* Replace with your desired foreground color */
+}
+
+.author-name.self-author strong {
+  color: #d32f2f; /* Replace with the color for your name */
+  font-weight: bold;
+}
+
+#education {
+  margin: 2em 0;
+}
+
+
+#publications {
+  margin: 2em 0;
+}
