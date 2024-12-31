@@ -30,3 +30,5 @@ I also serve as the [Technical Director of Perception](https://www.autodrive.uto
 - Self-supervised learning (SSL) and emergence of robust visual features
 - Deep learning theory (neural collapse, phase transitions, information bottleneck)
 - Generalizable understanding of the world (3D representation learning, vision for autonomous systems)
+
+*This site is a work in progress, please excuse the dust.*
